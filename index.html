@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tik Tak Toe</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <audio src="audio/Button-sound.mp3"></audio>
+
+    <div class="container"> <!--container starts.-->
+
+        <!-- Choose what the player wants to be. -->
+        <div class="choiceBox ">
+            <h1><img src="images/newcrown.png" alt=""></h1>
+            <h3>Who do you want to be ?</h3>
+            <div class="choiceBtns">
+                <button class="crossBtn" onclick="chooseWho('cross')">X</button>
+                <button class="circleBtn" onclick="chooseWho('circle')">O</button>
+            </div>
+        </div>
+
+        <!-- Playing board -->
+        <div class="playArea disabled">
+            <div class="indicators">
+                <div class="slider"></div> <!-- will slide-->
+                <button class="player" id="active"></button> <!--content will be added dynamically-->
+                <button class="bot"></button><!--content will be added dynamically-->
+            </div>
+            <div class="playBoard">
+                <div class="element"><!--to show matching triplets after winning-->
+                    <div class="filler"></div>
+                </div> 
+                <div class="board">
+                    <div class="box" id="0" onclick="playerClick(this)"></div>
+                    <div class="box" id="1" onclick="playerClick(this)"></div>
+                    <div class="box" id="2" onclick="playerClick(this)"></div>
+                    <div class="box" id="3" onclick="playerClick(this)"></div>
+                    <div class="box" id="4" onclick="playerClick(this)"></div>
+                    <div class="box" id="5" onclick="playerClick(this)"></div>
+                    <div class="box" id="6" onclick="playerClick(this)"></div>
+                    <div class="box" id="7" onclick="playerClick(this)"></div>
+                    <div class="box" id="8" onclick="playerClick(this)"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--result box-->
+        <div class="result disabled">
+            <header>
+                <h1><img src="images/newcrown.png" alt=""></h1>
+                <h4></h4> <!--Content will be added dynamically.-->
+            </header>
+            <div class="actionBtns">
+                <button type="button" class="replayBtn">Replay</button>
+            </div>
+        </div>
+
+    </div> <!--container ends.-->
+
+    <!-- winning sequences -->
+    <script src="js/sequences.js"></script>
+
+    <!-- main javascript file -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
